@@ -33,6 +33,17 @@ public class NewSetPositionAuto extends LinearOpMode {
             BL.setTargetPosition(a2);
             BR.setTargetPosition(a1);
         }
+
+
+        FL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        FR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        BR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        FL.setPower(0.5);
+        FR.setPower(0.5);
+        BL.setPower(0.5);
+        BR.setPower(0.5);
     }
 
 
@@ -52,32 +63,17 @@ public class NewSetPositionAuto extends LinearOpMode {
         FR.setDirection(DcMotorSimple.Direction.REVERSE);
         BR.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        FL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        FR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        BR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        BL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
         FL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         FR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         BL.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         BR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        FL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        FR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        BL.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        BR.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        FL.setTargetPosition(538);
-        FR.setTargetPosition(538);
-        BL.setTargetPosition(538);
-        BR.setTargetPosition(538);
+        FL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        FR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        BR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        BL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         waitForStart();
-
-        FL.setPower(.5);
-        FR.setPower(.5);
-        BL.setPower(.5);
-        BR.setPower(.5);
 
         Revolution(2,1 );
     }
