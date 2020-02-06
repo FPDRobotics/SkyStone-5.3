@@ -15,22 +15,8 @@ public class NewSetPositionAuto extends LinearOpMode {
     private DcMotor BR;
     private DcMotor TRex;
 
-    public void Revolution (double LR, double FB) {
-        if (FB >= 2) {
-            int a1 = (int) (Math.abs(538) * Math.abs(LR) * FB);
-            int a2 = (int) (Math.abs(-538) * Math.abs(LR) * FB);
-
-            FL.setTargetPosition(a1);
-            FR.setTargetPosition(a2);
-            BL.setTargetPosition(a2);
-            BR.setTargetPosition(a1);
-
-            FL.setPower(0.5);
-            FR.setPower(0.5);
-            BL.setPower(0.5);
-            BR.setPower(0.5);
-
-        } else if (FB <= -2) {
+    public void Revolution  (double LR, double FB) {
+        if (FB >= 2 || FB <= -2) {
             int a1 = (int)(Math.abs(538) * Math.abs(LR) * FB);
             int a2 = (int)(Math.abs(-538) * Math.abs(LR) * FB);
 
@@ -38,41 +24,18 @@ public class NewSetPositionAuto extends LinearOpMode {
             FR.setTargetPosition(a2);
             BL.setTargetPosition(a2);
             BR.setTargetPosition(a1);
-
-            FL.setPower(0.5);
-            FR.setPower(0.5);
-            BL.setPower(0.5);
-            BR.setPower(0.5);
-
-        } else if (LR >= 2) {
-            int a1 = (int) (538 * LR * Math.abs(FB));
-            int a2 = (int) (-538 * LR * Math.abs(FB));
+        } else if (LR >= 2 || LR <= -2) {
+            int a1 = (int)(538 * LR * Math.abs(FB));
+            int a2 = (int)(-538 * LR * Math.abs(FB));
 
             FL.setTargetPosition(a1);
             FR.setTargetPosition(a2);
             BL.setTargetPosition(a2);
             BR.setTargetPosition(a1);
-
-            FL.setPower(0.5);
-            FR.setPower(0.5);
-            BL.setPower(0.5);
-            BR.setPower(0.5);
-
-        } else if (LR <= -2) {
-            int a1 = (int) (538 * LR * Math.abs(FB));
-            int a2 = (int) (538 * LR * Math.abs(FB));
-
-            FL.setTargetPosition(a1);
-            FR.setTargetPosition(a2);
-            BL.setTargetPosition(a2);
-            BR.setTargetPosition(a1);
-
-            FL.setPower(0.5);
-            FR.setPower(0.5);
-            BL.setPower(0.5);
-            BR.setPower(0.5);
         }
     }
+
+
 
     @Override
     public void runOpMode() {
@@ -111,6 +74,11 @@ public class NewSetPositionAuto extends LinearOpMode {
 
         waitForStart();
 
-        Revolution(1.5,1);
+        FL.setPower(.5);
+        FR.setPower(.5);
+        BL.setPower(.5);
+        BR.setPower(.5);
+
+        Revolution(2,1 );
     }
 }
