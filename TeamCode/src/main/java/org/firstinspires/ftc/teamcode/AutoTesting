@@ -1,0 +1,25 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+
+@Autonomous(name = "DRIVESENSORTEST", group = "")
+public class AutoTesting extends LinearRobot {
+
+    public void runOpMode() throws InterruptedException {
+        super.runOpMode();
+        waitForStart();
+        driveSensor(30,0, .5);
+        if (colorSL.alpha() < 50) {
+            moveSkyblockPositions(1);
+            driveSensor(32,0,.5);
+            sleep(1000);
+            lowerTRexArm();
+            sleep(1000);
+            driveSensor(27,0,.5);
+            lowerTRexArm();
+            sleep(1000);
+            driveSensor(27,0, .5);
+        }
+        }
+    }
+
